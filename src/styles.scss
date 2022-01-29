@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "src/scss/_vars.scss";
+@import "src/scss/_buttons.scss";
+@import "src/scss/_input.scss";
+
+body,
+html {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+h3 {
+  font-size: 22px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  font-weight: 700;
+  color: $black;
+}
+@media screen and (min-width: 1680px) {
+  h1 {
+    font-size: 90px !important;
+  }
+  h2 {
+    font-size: 83px !important;
+    line-height: 1.1em !important;
+  }
+  h3 {
+    font-size: 43px !important;
+  }
+  p {
+    font-size: 26px !important;
+  }
+}

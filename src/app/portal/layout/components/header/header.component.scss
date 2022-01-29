@@ -1,0 +1,60 @@
+@import "src/scss/_vars.scss";
+header {
+  background: transparent;
+  padding: 2em 8em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      margin-right: 2em;
+      a {
+        text-decoration: none;
+        font-size: 15px;
+        color: $white;
+        font-weight: 300;
+      }
+    }
+  }
+  .subscribe {
+    form {
+      display: flex;
+      align-items: center;
+      .input input {
+        min-width: 273px;
+      }
+    }
+  }
+  .mb-res {
+    display: none;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 991px) {
+    padding: 1em;
+    .nav-links {
+      display: none;
+    }
+    .subscribe {
+      display: none;
+    }
+    .mb-res {
+      display: flex;
+      align-items: center;
+      .mat-flat-button {
+        margin-right: 10px;
+      }
+      .mat-icon-button ion-icon {
+        font-size: 30px;
+      }
+    }
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1439px) {
+    padding: 2em 2em;
+  }
+}

@@ -1,0 +1,28 @@
+<header>
+  <div class="container p-0 d-flex align-items-center justify-content-between">
+    <div class="logo-brand"><img src="assets/img/logo.svg" alt="" /></div>
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/product" routerLinkActive="active">Product</a></li>
+      <li><a routerLink="/pricing" routerLinkActive="active">Pricing</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+    <div class="subscribe">
+      <form>
+        <div class="input mb-0 me-3">
+          <input type="text" placeholder="Your Email" />
+        </div>
+        <button type="button" mat-flat-button class="mat-flat-white w--141">
+          Subscribe
+        </button>
+      </form>
+    </div>
+    <div class="mb-res">
+      <a routerLink="/" mat-flat-button class="mat-flat-white w--117">Login</a>
+      <button mat-icon-button>
+        <ion-icon src="assets/img/menu.svg"></ion-icon>
+      </button>
+    </div>
+  </div>
+</header>
