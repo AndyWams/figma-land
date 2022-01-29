@@ -10,7 +10,9 @@ import { AngularMaterialModule } from './shared/angular-material.module';
 import { HomeComponent } from '../pages/home/home.component';
 import { AboutComponent } from '../pages/about/about.component';
 import { ProductComponent } from '../pages/product/product.component';
+import { AgmCoreModule } from '@agm/core';
 
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -26,6 +28,11 @@ import { ProductComponent } from '../pages/product/product.component';
     LayoutRoutingModule,
     LoadingBarModule,
     LoadingBarRouterModule,
+    AgmCoreModule.forRoot({
+      // please get your own API key here:
+      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+      apiKey: environment.GoogleMapApiKey,
+    }),
   ],
   exports: [LayoutComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

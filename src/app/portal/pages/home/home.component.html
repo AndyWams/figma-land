@@ -137,13 +137,18 @@
     <h2>Testimonials</h2>
   </div>
   <div class="grid grid--repeat--three mt-5">
-    <div class="card">
+    <div
+      class="card"
+      *ngFor="
+        let item of more ? testimonials : (testimonials | slice: 0:6);
+        let i = index
+      "
+    >
       <div class="avatar">
-        <img src="assets/img/avatar-1.png" alt="avatar" />
+        <img src="assets/img/{{ item.avatar }}.png" alt="avatar" />
       </div>
       <p>
-        Slate helps you see how many more days you need to work to reach your
-        financial goal for the month and year.
+        {{ item.comment }}
       </p>
       <div class="stars">
         <span class="star filled"></span>
@@ -152,9 +157,11 @@
         <span class="star filled"></span>
         <span class="star outline"></span>
       </div>
-      <label>Regina Miles <span>Designer</span></label>
+      <label
+        >{{ item.name }} <span>{{ item.role }}</span></label
+      >
     </div>
-    <div class="card">
+    <!-- <div class="card">
       <div class="avatar">
         <img src="assets/img/avatar-2.png" alt="avatar" />
       </div>
@@ -170,8 +177,8 @@
         <span class="star outline"></span>
       </div>
       <label>Regina Miles <span>Designer</span></label>
-    </div>
-    <div class="card">
+    </div> -->
+    <!-- <div class="card">
       <div class="avatar">
         <img src="assets/img/avatar-3.png" alt="avatar" />
       </div>
@@ -238,10 +245,12 @@
         <span class="star outline"></span>
       </div>
       <label>Regina Miles <span>Designer</span></label>
-    </div>
+    </div> -->
   </div>
   <div class="d-flex justify-content-center my-5 pb-4">
-    <button mat-flat-button class="w--195">More Testimonials</button>
+    <button mat-flat-button class="w--195" (click)="more = !more" *ngIf="!more">
+      More Testimonials
+    </button>
   </div>
 </section>
 <section class="_section pricing">
@@ -280,6 +289,7 @@
     <a href="#" target="_blank"> <ion-icon name="logo-linkedin"></ion-icon></a>
   </div>
   <div class="map"><img src="assets/img/map.svg" alt="map" /></div>
+  <!-- <agm-map [latitude]="lat" [longitude]="lng"></agm-map> -->
   <div class="d-flex justify-content-center contact-line">
     <div class="d-flex align-items-center flex-column">
       <ion-icon name="location"></ion-icon>

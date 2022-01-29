@@ -15,10 +15,29 @@ header {
     li {
       margin-right: 2em;
       a {
+        position: relative;
         text-decoration: none;
         font-size: 15px;
         color: $white;
         font-weight: 300;
+        span {
+          display: block;
+          height: 2px;
+          width: 0px;
+          position: absolute;
+          background: $white;
+          left: 0;
+          transition: 0.25s;
+          bottom: -3px;
+        }
+        &.active {
+          font-weight: 700;
+        }
+        &:hover {
+          span {
+            width: 100%;
+          }
+        }
       }
     }
   }

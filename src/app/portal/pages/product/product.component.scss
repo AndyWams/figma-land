@@ -1,0 +1,46 @@
+@import "src/scss/_vars.scss";
+._hero {
+  background: $linear-gradient;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+
+  ._center {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 13em 0em;
+    z-index: 1;
+    h3 {
+      color: $white;
+      margin-bottom: 1em;
+    }
+    h1 {
+      font-size: 55px;
+      font-weight: bold;
+      letter-spacing: 0.2px;
+      line-height: 65px;
+      margin-bottom: 14px;
+      text-align: center;
+      color: $white;
+    }
+    p {
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: $white;
+      font-weight: 400;
+      margin-bottom: 1em;
+    }
+    .pt-4 {
+      position: relative;
+      top: 3em;
+    }
+  }
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+  }
+}

@@ -2,11 +2,32 @@
   <div class="container p-0 d-flex align-items-center justify-content-between">
     <div class="logo-brand"><img src="assets/img/logo.svg" alt="" /></div>
     <ul class="nav-links">
-      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/product" routerLinkActive="active">Product</a></li>
-      <li><a routerLink="/pricing" routerLinkActive="active">Pricing</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home <span></span
+        ></a>
+      </li>
+      <li>
+        <a routerLink="/product" routerLinkActive="active"
+          >Product <span></span
+        ></a>
+      </li>
+      <li>
+        <a routerLink="/pricing" routerLinkActive="active"
+          >Pricing <span></span
+        ></a>
+      </li>
+      <li>
+        <a routerLink="/about" routerLinkActive="active">About <span></span></a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="active"
+          >Contact <span></span
+        ></a>
+      </li>
     </ul>
     <div class="subscribe">
       <form>
