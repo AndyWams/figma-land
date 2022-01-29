@@ -1,0 +1,76 @@
+@import "src/scss/_vars.scss";
+.nav-menu {
+  display: none;
+}
+@media only screen and (min-width: 320px) and (max-width: 991px) {
+  .nav-menu {
+    padding: 3em 1.5em 2em;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    transform: translateX(100%) translateX(100px);
+
+    background: $black;
+    z-index: 100;
+    width: -webkit-fill-available;
+    overflow-y: scroll;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    &.open {
+      transform: translateX(0);
+    }
+    .title {
+      font-size: 26px;
+      font-weight: bold;
+      color: $white;
+    }
+    .close-btn {
+      span {
+        font-size: 14px;
+        color: $white;
+      }
+      ion-icon {
+        color: $white;
+        font-size: 37px;
+        margin-right: 10px;
+      }
+    }
+    .nav--links {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-row-gap: 20px;
+      padding-top: 2em;
+      li {
+        margin: 0em 0em 1em;
+        a {
+          text-decoration: none;
+          font-size: 18px;
+          color: $white;
+          &.active {
+            color: $blue;
+          }
+        }
+        .d-flex {
+          small {
+            margin-bottom: 0.5em;
+            color: $white;
+          }
+          a:not(:last-child) {
+            margin-bottom: 1em;
+          }
+        }
+      }
+    }
+    .subscribe button {
+      width: -webkit-fill-available;
+    }
+  }
+}

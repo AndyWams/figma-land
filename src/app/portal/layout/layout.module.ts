@@ -11,8 +11,9 @@ import { HomeComponent } from '../pages/home/home.component';
 import { AboutComponent } from '../pages/about/about.component';
 import { ProductComponent } from '../pages/product/product.component';
 import { AgmCoreModule } from '@agm/core';
+import { MbMenuComponent } from './components/mb-menu/mb-menu.component';
 
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -21,6 +22,7 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     AboutComponent,
     ProductComponent,
+    MbMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -28,11 +30,11 @@ import { environment } from 'src/environments/environment';
     LayoutRoutingModule,
     LoadingBarModule,
     LoadingBarRouterModule,
-    AgmCoreModule.forRoot({
-      // please get your own API key here:
-      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
-      apiKey: environment.GoogleMapApiKey,
-    }),
+    // AgmCoreModule.forRoot({
+    //   // please get your own API key here:
+    //   // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+    //   apiKey: environment.GoogleMapApiKey,
+    // }),
   ],
   exports: [LayoutComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

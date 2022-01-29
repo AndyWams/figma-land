@@ -27,11 +27,17 @@
     flex-direction: column;
     padding: 13em 0em 0em;
     z-index: 1;
+    ._capd {
+      width: fit-content;
+      overflow: hidden;
+    }
     h3 {
+      position: relative;
       color: $white;
       margin-bottom: 1em;
     }
     h1 {
+      position: relative;
       font-size: 55px;
       font-weight: bold;
       letter-spacing: 0.2px;
@@ -41,6 +47,7 @@
       color: $white;
     }
     p {
+      position: relative;
       text-align: center;
       letter-spacing: 0.2px;
       color: $white;

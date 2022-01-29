@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Testimonials } from 'src/assets/local/testimonials';
 import { IUsers } from '../../models/user';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,16 @@ export class HomeComponent implements OnInit {
   lng: number = 7.809007;
   testimonials: IUsers[] = Testimonials;
   more: boolean = false;
-  constructor() {}
+  constructor() {
+    // window.onbeforeunload = () => {
+    //   window.scrollTo(0, 0);
+    // };
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init({
+      once: true,
+      //  mirror: false,
+    });
+  }
 }

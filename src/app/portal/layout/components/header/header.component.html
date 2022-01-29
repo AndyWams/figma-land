@@ -1,5 +1,7 @@
 <header>
-  <div class="container p-0 d-flex align-items-center justify-content-between">
+  <div
+    class="container p-0 d-flex align-items-center justify-content-between animate__animated animate__fadeInDown delay-2m"
+  >
     <div class="logo-brand"><img src="assets/img/logo.svg" alt="" /></div>
     <ul class="nav-links">
       <li>
@@ -41,7 +43,7 @@
     </div>
     <div class="mb-res">
       <a routerLink="/" mat-flat-button class="mat-flat-white w--117">Login</a>
-      <button mat-icon-button>
+      <button mat-icon-button (click)="toggleMenu()">
         <ion-icon src="assets/img/menu.svg"></ion-icon>
       </button>
     </div>

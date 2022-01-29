@@ -1,0 +1,30 @@
+<nav class="nav-menu" [ngClass]="{ open: isOpen }">
+  <div class="d-flex justify-content-end mb-5">
+    <div
+      class="close-btn d-flex align-items-center justify-content-end"
+      (click)="closeMenu()"
+    >
+      <ion-icon name="close-outline"></ion-icon>
+      <span>Close</span>
+    </div>
+  </div>
+  <ul class="nav--links">
+    <li><a routerLink="/" (click)="closeMenuOnRoute()">Home</a></li>
+    <li><a routerLink="/product" (click)="closeMenuOnRoute()">Product</a></li>
+    <li><a routerLink="/" (click)="closeMenuOnRoute()">Pricing</a></li>
+    <li><a routerLink="/about" (click)="closeMenuOnRoute()">About</a></li>
+    <li><a routerLink="/" (click)="closeMenuOnRoute()">Contact</a></li>
+  </ul>
+  <div class="subscribe mt-auto">
+    <form>
+      <div class="input mb-0">
+        <input type="text" placeholder="Your Email" />
+      </div>
+      <div class="mt-2">
+        <button type="button" mat-flat-button class="mat-flat-white w--141">
+          Subscribe
+        </button>
+      </div>
+    </form>
+  </div>
+</nav>

@@ -1,5 +1,9 @@
 <main class="main">
-  <app-header></app-header>
+  <app-header (outputToParent)="getValFromChildren($event)"></app-header>
+  <app-mb-menu
+    [isOpen]="_isOpen"
+    (outputToParent)="getValFromChildren($event)"
+  ></app-mb-menu>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </main>
