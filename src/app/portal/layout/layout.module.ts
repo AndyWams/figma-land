@@ -12,6 +12,8 @@ import { AboutComponent } from '../pages/about/about.component';
 import { ProductComponent } from '../pages/product/product.component';
 import { AgmCoreModule } from '@agm/core';
 import { MbMenuComponent } from './components/mb-menu/mb-menu.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // import { environment } from 'src/environments/environment';
 @NgModule({
@@ -29,13 +31,17 @@ import { MbMenuComponent } from './components/mb-menu/mb-menu.component';
     AngularMaterialModule,
     LayoutRoutingModule,
     LoadingBarModule,
+    HttpClientModule,
     LoadingBarRouterModule,
+    ReactiveFormsModule,
+    FormsModule,
     // AgmCoreModule.forRoot({
     //   // please get your own API key here:
     //   // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
     //   apiKey: environment.GoogleMapApiKey,
     // }),
   ],
+  providers: [],
   exports: [LayoutComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
