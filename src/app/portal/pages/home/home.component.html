@@ -139,12 +139,20 @@
         >Subscribe to our Newsletter
         <span>Available exclusivery on Figmaland</span></label
       >
-      <form>
+      <form #emailForm="ngForm" (ngSubmit)="addNewsletter(emailForm)">
         <div class="d-flex align-items-center">
           <div class="input shade m-0 me-3">
-            <input type="text" placeholder="Your Email" />
+            <input
+              type="text"
+              placeholder="Your Email"
+              name="Email"
+              id="Email"
+              ngModel
+            />
           </div>
-          <button mat-flat-button class="w--196">Subscribe</button>
+          <button type="submit" mat-flat-button class="w--196">
+            Subscribe
+          </button>
         </div>
       </form>
     </div>

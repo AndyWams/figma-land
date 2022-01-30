@@ -24,7 +24,18 @@ export class DataService {
   }
 
   createContact(model: any): Observable<any> {
-    const url = this.baseUrl + `/${environment.SPREADSHEET_ID}/values/A1`;
+    const url =
+      this.baseUrl +
+      `/${environment.ContactSpreadsheet_ID}/values/A1:append?valueInputOption=RAW`;
+    return this.http.post<any>(url, model, this.httpOptions).pipe(
+      map((status) => status),
+      catchError(this.handleError)
+    );
+  }
+  createNewsletter(model: any): Observable<any> {
+    const url =
+      this.baseUrl +
+      `/${environment.newsletterSpreadsheet_ID}/values/A1:append?valueInputOption=RAW`;
     return this.http.post<any>(url, model, this.httpOptions).pipe(
       map((status) => status),
       catchError(this.handleError)

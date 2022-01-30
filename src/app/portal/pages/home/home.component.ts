@@ -5,7 +5,11 @@ import { NgForm } from '@angular/forms';
 import * as AOS from 'aos';
 import { DataService } from '../../services/data.service';
 import { environment } from 'src/environments/environment';
-
+interface ContactInfo {
+  NAME: string;
+  EMAIL: string;
+  MESSAGE: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,6 +21,7 @@ export class HomeComponent implements OnInit {
   testimonials: IUsers[] = Testimonials;
   more: boolean = false;
   contactDetails: Object = {};
+
   constructor(private dataSrv: DataService) {
     // window.onbeforeunload = () => {
     //   window.scrollTo(0, 0);
@@ -30,24 +35,40 @@ export class HomeComponent implements OnInit {
     });
   }
   onSubmit(form: NgForm) {
-    console.log(form);
-
     if (form.controls.MESSAGE.value === '') {
-      console.log('please enter mesage');
       return;
     }
 
-    if (form.status === 'VALID') {
-      console.log(form.value);
-      this.contactDetails = form.value;
+    if (form.value !== '') {
+      const { NAME, EMAIL, MESSAGE }: ContactInfo = form.value;
       let obj = {
-        spreadsheetId: environment.SPREADSHEET_ID,
-        tableRange: 'contact!A1:C1',
-        updates: this.contactDetails,
+        values: [[NAME, EMAIL, MESSAGE]],
       };
       this.dataSrv.createContact(obj).subscribe(
-        (data) => {
-          console.log(data);
+        () => {
+          console.log('success');
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          form.reset();
+        }
+      );
+    }
+  }
+  addNewsletter(form: NgForm) {
+    if (form.controls.Email.value === '') {
+      return;
+    }
+    if (form.value !== '') {
+      const { Email }: any = form.value;
+      let obj = {
+        values: [[Email]],
+      };
+      this.dataSrv.createNewsletter(obj).subscribe(
+        () => {
+          console.log('success');
         },
         (error) => {
           console.log(error);

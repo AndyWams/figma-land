@@ -1,7 +1,5 @@
 <header>
-  <div
-    class="container p-0 d-flex align-items-center justify-content-between animate__animated animate__fadeInDown delay-2m"
-  >
+  <div class="container p-0 d-flex align-items-center justify-content-between">
     <div class="logo-brand"><img src="assets/img/logo.svg" alt="" /></div>
     <ul class="nav-links">
       <li>
@@ -32,11 +30,17 @@
       </li>
     </ul>
     <div class="subscribe">
-      <form>
+      <form #emailForm="ngForm" (ngSubmit)="addNewsletter(emailForm)">
         <div class="input mb-0 me-3">
-          <input type="text" placeholder="Your Email" />
+          <input
+            type="text"
+            placeholder="Your Email"
+            name="Email"
+            id="Email"
+            ngModel
+          />
         </div>
-        <button type="button" mat-flat-button class="mat-flat-white w--141">
+        <button type="submit" mat-flat-button class="mat-flat-white w--141">
           Subscribe
         </button>
       </form>

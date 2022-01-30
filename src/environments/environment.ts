@@ -6,9 +6,10 @@ export const environment = {
   production: false,
   appBaseUrl: 'http://localhost:4200',
   googleSheetUrl: 'https://sheets.googleapis.com/v4/spreadsheets',
-  SPREADSHEET_ID: '1xA45tsvJs7pcRLcfMwPcwNTx7eg9QFilasKFB3iCfvo',
+  ContactSpreadsheet_ID: '1xA45tsvJs7pcRLcfMwPcwNTx7eg9QFilasKFB3iCfvo',
+  newsletterSpreadsheet_ID: '1qTn1hWn672eGWrh25GWyx5BSgxR9c_5N-YB91Ghesn4',
   token:
-    'ya29.A0ARrdaM9oCYtQ3kRlkX-LWsK1B4W_aed27DFUQs16yoGI9ct_FHeyfWNK7ictM5fbcBekNbu41-Wyc7BDZ5rdjD9KcGt_E77EKMrtg_drrH3GCWRjCh1Y9KsyEdiV33Pk9gMrvDzObGux6k0H_PNQ56AsfP1K',
+    'ya29.A0ARrdaM_ixfCdwPm-RXeCkliI2DTYatnA6nndm7ArjpzCDznT1a7MELYOFqROZzyXGOPDzweXkwyThmvHk7RFduyik39aYT95co9NdCPZ-cOlrcMHeiGvGU6bgboTdZGu4zJf_UK-3rtLON5vrt8Ys2hruTPz',
   API_KEY: 'AIzaSyC6hn_y3wUE1C-cB-pVI8wRB_XASFJovsE',
   SCOPE: 'https://www.googleapis.com/auth/spreadsheets',
   // GoogleMapApiKey: 'AIzaSyBjmw8CCUG6HgSFzf56fkZRj1VQtHnTdP4',
