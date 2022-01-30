@@ -4,7 +4,16 @@ This project illustrates a landing page prototype. The project was generated wit
 
 It is a single page app (SPA), that utilizes the concept of Angular routing and lazy loading.
 
-Data entered on the form is sent to Google sheet.
+Data entered on the form is sent to Google sheet. The application employ the Google Sheets API to enable the submission
+of data.
+
+## Libraries
+
+- Angular Material
+- Bootstrap
+- Aos
+
+Other libraries used are platformed enabled by default.
 
 ## Installation
 
