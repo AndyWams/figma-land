@@ -13,7 +13,7 @@ of data.
 - Bootstrap
 - Aos
 
-Other libraries used are platformed enabled by default.
+Other libraries used are platform enabled by default.
 
 ## Installation
 
