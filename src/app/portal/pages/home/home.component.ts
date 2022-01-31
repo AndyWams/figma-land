@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
       };
       this.dataSrv.createContact(obj).subscribe(
         () => {
-          this.toastr.success('Email added...', 'Success');
+          this.toastr.success('Contact info submitted', 'Success');
         },
         (error) => {
           this.toastr.error(error, 'Message', {
