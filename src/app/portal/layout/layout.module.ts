@@ -15,6 +15,7 @@ import { MbMenuComponent } from './components/mb-menu/mb-menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+// import { environment } from 'src/environments/environment';
 
 // import { environment } from 'src/environments/environment';
 @NgModule({
@@ -39,6 +40,9 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
     }),
+    // AgmCoreModule.forRoot({
+    //   apiKey: environment.GoogleMapApiKey,
+    // }),
   ],
   providers: [{ provide: ToastrService }],
   exports: [LayoutComponent],

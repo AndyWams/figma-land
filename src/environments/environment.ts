@@ -14,7 +14,7 @@ export const environment = {
   refresh_token:
     '1//04LkSUa82CL0RCgYIARAAGAQSNwF-L9IrdajyHye0WHXCoS5c2v8vhVUkcbqLZrUMtWVS31N9HVYhEcd8ZZaMP0WA7Na0RFYE-Aw',
   SCOPE: 'https://www.googleapis.com/auth/spreadsheets',
-  // GoogleMapApiKey: 'AIzaSyBjmw8CCUG6HgSFzf56fkZRj1VQtHnTdP4',
+  // GoogleMapApiKey: 'AIzaSyC6hn_y3wUE1C-cB-pVI8wRB_XASFJovsE',
 };
 
 /*
