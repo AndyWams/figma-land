@@ -28,6 +28,9 @@ export class DataService {
     const url =
       this.baseUrl +
       `/${environment.ContactSpreadsheet_ID}/values/A1:append?valueInputOption=RAW`;
+    if (model === null) {
+      return;
+    }
     return this.http.post<any>(url, model, this.httpOptions).pipe(
       map((status) => status),
       catchError(this.handleError)
@@ -37,6 +40,9 @@ export class DataService {
     const url =
       this.baseUrl +
       `/${environment.newsletterSpreadsheet_ID}/values/A1:append?valueInputOption=RAW`;
+    if (model === null) {
+      return;
+    }
     return this.http.post<any>(url, model, this.httpOptions).pipe(
       map((status) => status),
       catchError(this.handleError)
