@@ -17,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 // import { environment } from 'src/environments/environment';
 
-// import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     LayoutComponent,

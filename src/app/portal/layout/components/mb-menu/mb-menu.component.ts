@@ -13,11 +13,6 @@ export class MbMenuComponent implements OnInit {
   ngOnInit(): void {}
 
   closeMenu() {
-    this.isOpen = !this.isOpen;
-    this.outputToParent.emit(this.isOpen);
-  }
-  closeMenuOnRoute() {
-    this.isOpen = !this.isOpen;
-    this.outputToParent.emit(this.isOpen);
+    this.outputToParent.emit(!this.isOpen);
   }
 }
