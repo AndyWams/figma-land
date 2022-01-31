@@ -13,12 +13,13 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class DataService {
   private httpOptions: any;
+  token: any;
   private baseUrl = environment.googleSheetUrl;
   constructor(private http: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token}`,
+        Authorization: `Bearer ${localStorage.getItem('REFRESH_TOKEN')}`,
       }),
     };
   }
@@ -41,6 +42,20 @@ export class DataService {
       catchError(this.handleError)
     );
   }
+
+  getFreshToken(params: object): Observable<any> {
+    const url = 'https://www.googleapis.com/oauth2/v4/token';
+    return this.http.post<any>(url, params, this.httpOptions).pipe(
+      map((res: any) => {
+        this.setRefreshToken(res.access_token);
+      }),
+      catchError(this.handleError)
+    );
+  }
+  setRefreshToken(token: any): void {
+    localStorage.setItem('REFRESH_TOKEN', token);
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

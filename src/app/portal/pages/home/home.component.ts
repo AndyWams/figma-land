@@ -21,11 +21,17 @@ export class HomeComponent implements OnInit {
   testimonials: IUsers[] = Testimonials;
   more: boolean = false;
   contactDetails: Object = {};
-
+  params: object;
   constructor(private dataSrv: DataService) {
     // window.onbeforeunload = () => {
     //   window.scrollTo(0, 0);
     // };
+    this.params = {
+      client_id: environment.client_id,
+      client_secret: environment.client_secret,
+      refresh_token: environment.refresh_token,
+      grant_type: 'refresh_token',
+    };
   }
 
   ngOnInit(): void {
@@ -33,6 +39,7 @@ export class HomeComponent implements OnInit {
       once: true,
       //  mirror: false,
     });
+    this.dataSrv.getFreshToken(this.params).subscribe();
   }
   onSubmit(form: NgForm) {
     if (form.controls.MESSAGE.value === '') {
