@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/portal/services/data.service';
 
 @Component({
@@ -8,14 +9,13 @@ import { DataService } from 'src/app/portal/services/data.service';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  constructor(private dataSrv: DataService) {}
+  constructor(private dataSrv: DataService, private toastr: ToastrService) {}
 
   ngOnInit(): void {}
   addNewsletter(form: NgForm) {
     if (form.controls.Email.value === '') {
       return;
     }
-
     if (form.value !== '') {
       const { Email }: any = form.value;
       let obj = {
@@ -23,10 +23,12 @@ export class FooterComponent implements OnInit {
       };
       this.dataSrv.createNewsletter(obj).subscribe(
         () => {
-          console.log('success');
+          this.toastr.success('Email added...', 'Success');
         },
         (error) => {
-          console.log(error);
+          this.toastr.error(error, 'Message', {
+            timeOut: 2000,
+          });
         },
         () => {
           form.reset();

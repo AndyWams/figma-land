@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/portal/services/data.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { DataService } from 'src/app/portal/services/data.service';
 export class HeaderComponent implements OnInit {
   @Output() outputToParent = new EventEmitter<boolean>();
   _isOpen: boolean = false;
-  constructor(private dataSrv: DataService) {}
+  constructor(private dataSrv: DataService, private toastr: ToastrService) {}
 
   ngOnInit(): void {}
   toggleMenu() {
@@ -20,7 +21,6 @@ export class HeaderComponent implements OnInit {
     if (form.controls.Email.value === '') {
       return;
     }
-
     if (form.value !== '') {
       const { Email }: any = form.value;
       let obj = {
@@ -28,10 +28,12 @@ export class HeaderComponent implements OnInit {
       };
       this.dataSrv.createNewsletter(obj).subscribe(
         () => {
-          console.log('success');
+          this.toastr.success('Email added...', 'Success');
         },
         (error) => {
-          console.log(error);
+          this.toastr.error(error, 'Message', {
+            timeOut: 2000,
+          });
         },
         () => {
           form.reset();

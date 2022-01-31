@@ -3,7 +3,7 @@
 @import "src/scss/_vars.scss";
 @import "src/scss/_buttons.scss";
 @import "src/scss/_input.scss";
-
+@import "~ngx-toastr/toastr";
 body,
 html {
   margin: 0;

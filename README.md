@@ -12,6 +12,7 @@ of data.
 - Angular Material
 - Bootstrap
 - Aos
+- ngx-toastr
 
 Other libraries used are platform enabled by default.
 

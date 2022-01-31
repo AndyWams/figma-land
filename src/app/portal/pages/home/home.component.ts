@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import * as AOS from 'aos';
 import { DataService } from '../../services/data.service';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 interface ContactInfo {
   NAME: string;
   EMAIL: string;
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
   more: boolean = false;
   contactDetails: Object = {};
   params: object;
-  constructor(private dataSrv: DataService) {
+  constructor(private dataSrv: DataService, private toastr: ToastrService) {
     // window.onbeforeunload = () => {
     //   window.scrollTo(0, 0);
     // };
@@ -53,10 +54,12 @@ export class HomeComponent implements OnInit {
       };
       this.dataSrv.createContact(obj).subscribe(
         () => {
-          console.log('success');
+          this.toastr.success('Email added...', 'Success');
         },
         (error) => {
-          console.log(error);
+          this.toastr.error(error, 'Message', {
+            timeOut: 2000,
+          });
         },
         () => {
           form.reset();
@@ -75,10 +78,12 @@ export class HomeComponent implements OnInit {
       };
       this.dataSrv.createNewsletter(obj).subscribe(
         () => {
-          console.log('success');
+          this.toastr.success('Email added...', 'Success');
         },
         (error) => {
-          console.log(error);
+          this.toastr.error(error, 'Message', {
+            timeOut: 2000,
+          });
         },
         () => {
           form.reset();

@@ -14,6 +14,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MbMenuComponent } from './components/mb-menu/mb-menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 // import { environment } from 'src/environments/environment';
 @NgModule({
@@ -35,13 +36,11 @@ import { HttpClientModule } from '@angular/common/http';
     LoadingBarRouterModule,
     ReactiveFormsModule,
     FormsModule,
-    // AgmCoreModule.forRoot({
-    //   // please get your own API key here:
-    //   // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
-    //   apiKey: environment.GoogleMapApiKey,
-    // }),
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+    }),
   ],
-  providers: [],
+  providers: [{ provide: ToastrService }],
   exports: [LayoutComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
