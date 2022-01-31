@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     AOS.init({
       once: true,
-      //  mirror: false,
     });
   }
   onSubmit(form: NgForm) {
