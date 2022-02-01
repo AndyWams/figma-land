@@ -13,7 +13,6 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class DataService {
   private httpOptions: any;
-  token: any;
   private baseUrl = environment.googleSheetUrl;
   constructor(private http: HttpClient) {
     this.httpOptions = {
@@ -75,6 +74,8 @@ export class DataService {
       );
     }
     // Return an observable with a user-facing error message.
-    return throwError('Something bad happened; please try again later.');
+    return throwError(
+      'Something bad happened; please refresh the page and try again later.'
+    );
   }
 }
