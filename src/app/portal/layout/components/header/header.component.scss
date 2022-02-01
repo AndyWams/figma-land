@@ -13,7 +13,7 @@ header {
     margin: 0;
     display: flex;
     li {
-      margin-right: 2em;
+      margin-right: 3.1em;
       a {
         position: relative;
         text-decoration: none;
@@ -38,6 +38,9 @@ header {
             width: 100%;
           }
         }
+      }
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
